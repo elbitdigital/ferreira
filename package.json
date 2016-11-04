@@ -1,7 +1,7 @@
 {
-  "name": "base",
-  "version": "2.0.0",
-  "description": "Elbit Foundation Base",
+  "name": "ferreira",
+  "version": "0.0.1",
+  "description": "Elbit Barbearia Ferreira Project",
   "main": "GulpFile.js",
   "devDependencies": {
     "browser-sync": "^2.12.5",
@@ -26,12 +26,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/elbitdigital/base.git"
+    "url": "https://github.com/elbitdigital/ferreira.git"
   },
   "keywords": [
-    "base",
+    "barbearia",
+    "ferreira",
+    "jukebox",
     "elbitdigital",
-    "elbit"
+    "elbit",
+    "dalia"
   ],
   "author": {
     "name": "Elbit Digital",
@@ -57,6 +60,6 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/elbitdigital/base/issues"
+    "url": "https://github.com/elbitdigital/ferreira/issues"
   }
 }
