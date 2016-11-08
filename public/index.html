@@ -5,13 +5,29 @@
 <meta name="viewport"
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
 <script>
-	(function(d) {
+	(function (d) {
 		var config = {
 					kitId: 'zcf1tth',
 					scriptTimeout: 6000,
 					async: true
 				},
-				h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+				h = d.documentElement, t = setTimeout(function () {
+					h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+				}, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a;
+		h.className += " wf-loading";
+		tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+		tk.async = true;
+		tk.onload = tk.onreadystatechange = function () {
+			a = this.readyState;
+			if (f || a && a != "complete" && a != "loaded")return;
+			f = true;
+			clearTimeout(t);
+			try {
+				Typekit.load(config)
+			} catch (e) {
+			}
+		};
+		s.parentNode.insertBefore(tk, s)
 	})(document);
 </script>
 <script src="dist/js/villa.min.js"></script>
@@ -28,7 +44,7 @@
 <style>
 
 	body {
-		height: 100vh;
+		min-height: 100vh;
 		padding: 1em;
 	}
 
@@ -44,16 +60,210 @@
 		max-width: 16rem;
 	}
 
+	@media (min-width: 48em) {
+
+		body {
+			padding: 6em 1em 1em;
+		}
+
+	}
 </style>
+
+<style>
+
+	.Contact {
+		margin-bottom: 1em;
+	}
+
+</style>
+
+<style>
+
+	.Slogan {
+		padding: 1em 0;
+		text-align: center;
+	}
+
+	.Slogan-title {
+		font-weight: 900;
+		font-size: .75em;
+		line-height: 1.48;
+		text-transform: uppercase;
+		letter-spacing: 2pt;
+	}
+
+</style>
+
+<style>
+
+	.Social {
+		margin-bottom: 1em;
+	}
+
+	.Social-icon {
+		display: inline-block;
+	}
+
+	.Social-icon a {
+		font-size: 1.5em;
+	}
+
+</style>
+
+<style>
+
+	.Services {
+		margin-bottom: 1em;
+	}
+
+	.Services-list {
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+		-webkit-align-items: center;
+		align-items: center;
+		-webkit-justify-content: center;
+		justify-content: center;
+		-webkit-flex-flow: row wrap;
+		flex-flow: row wrap;
+		max-width: 16em;
+	}
+
+	.ServicesItem {
+		padding: .5em;
+	}
+
+	.ServicesItem-title {
+		font-size: .75em;
+	}
+
+</style>
+
+<style>
+
+	.Gallery {
+		width: 100%;
+		margin-bottom: 1em;
+	}
+
+	.Gallery-list {
+		margin: 0 auto;
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+		-webkit-align-items: center;
+		align-items: center;
+		-webkit-justify-content: center;
+		justify-content: center;
+		-webkit-flex-flow: row wrap;
+		flex-flow: row wrap;
+		max-width: 18em;
+	}
+
+	.GalleryItem {
+		width: 6em;
+		height: 6em;
+		padding: 2px;
+	}
+
+	.GalleryItem span {
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		width: 100%;
+		height: 100%;
+		display: block;
+	}
+
+</style>
+
 
 <body class="flex flex-column justify-center align-center black">
 
+<div class="Services font-white">
+
+	<ul class="Services-list">
+
+		<li class="ServicesItem">
+			<div class="ServicesItem-icon"></div>
+			<div class="ServicesItem-title">Barba</div>
+		</li>
+
+		<li class="ServicesItem">
+			<div class="ServicesItem-icon"></div>
+			<div class="ServicesItem-title">Cabelo</div>
+		</li>
+
+		<li class="ServicesItem">
+			<div class="ServicesItem-icon"></div>
+			<div class="ServicesItem-title">Bigode</div>
+		</li>
+
+		<li class="ServicesItem">
+			<div class="ServicesItem-icon"></div>
+			<div class="ServicesItem-title">Maquiagem capilar</div>
+		</li>
+
+		<li class="ServicesItem">
+			<div class="ServicesItem-icon"></div>
+			<div class="ServicesItem-title">Progressiva masculina</div>
+		</li>
+
+	</ul>
+
+</div>
+
 <img src="dist/img/logo.png" alt="Barbearia Ferreira"/>
 
-<p class="font-grey-50">18 9 9762 9726</p>
-<p class="font-grey-50" style="margin-bottom: 1em;">18 9 9673 1100</p>
+<div class="Contact">
 
-<p class="font-grey-500">Avenida Armando Salles de Oliveira, 720, Centro, Assis - São Paulo</p>
+	<p class="font-grey-50">18 9 9762 9726</p>
+	<p class="font-grey-50" style="margin-bottom: 1em;">18 9 9673 1100</p>
+	<p class="font-grey-400">Avenida Armando Salles de Oliveira, 720, Centro, Assis - São Paulo</p>
+
+</div>
+
+
+<div class="Gallery">
+	<ul class="Gallery-list">
+		<li class="GalleryItem"><span style="background-image: url('dist/img/1.jpg')"></span></li>
+		<li class="GalleryItem"><span style="background-image: url('dist/img/2.jpg')"></span></li>
+		<li class="GalleryItem"><span style="background-image: url('dist/img/3.jpg')"></span></li>
+		<li class="GalleryItem"><span style="background-image: url('dist/img/4.jpg')"></span></li>
+		<li class="GalleryItem"><span style="background-image: url('dist/img/5.jpg')"></span></li>
+		<li class="GalleryItem"><span style="background-image: url('dist/img/6.jpg')"></span></li>
+		<li class="GalleryItem"><span style="background-image: url('dist/img/7.jpg')"></span></li>
+		<li class="GalleryItem"><span style="background-image: url('dist/img/8.jpg')"></span></li>
+		<li class="GalleryItem"><span style="background-image: url('dist/img/9.jpg')"></span></li>
+	</ul>
+</div>
+
+<div class="Slogan">
+
+	<h2 class="Slogan-title font-grey-50">OS HOMENS TAMBÉM TÊM SEU CLUBE!</h2>
+
+</div>
+
+<ul class="Social">
+
+	<li class="Social-icon">
+		<a href="https://www.facebook.com/Barbearia-Ferreira-1762916113936473">
+			<i class="icon-facebook font-white"></i>
+		</a>
+	</li>
+
+	<li class="Social-icon">
+		<a href="https://www.instagram.com/explore/locations/1030285073/barbearia-ferreira/">
+			<i class="icon-instagram font-white"></i>
+		</a>
+	</li>
+
+</ul>
 
 <script src="dist/js/ferreira.js"></script>
 </body>
