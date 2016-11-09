@@ -62,11 +62,6 @@ source.images = {
 	location: source.location + 'img/'
 };
 
-source.images.largePhotos = {
-	content: '*.*',
-	location: source.images.location + 'largePhotos/'
-};
-
 // Public Content structure
 
 var public = {
@@ -88,6 +83,11 @@ dist.css = {
 dist.js = {
 	content: '*.js',
 	location: dist.location + 'js/'
+};
+
+dist.images = {
+	content: '*.*',
+	location: dist.location + 'img/'
 };
 
 // CSS
@@ -136,13 +136,22 @@ gulp.task('js-watch', ['js'], function () {
 
 // IMAGES
 
-gulp.task('resizePhotos', function () {
-	gulp.src(source.images.location + source.images.content)
+gulp.task('resizeThumbs', function () {
+	gulp.src(source.images.location + 'thumb*')
 		.pipe(imageResize({
-			height : 960,
+			height : 240,
 			upscale : false
 		}))
-		.pipe(gulp.dest(dist.location + source.images.largePhotos.location));
+		.pipe(gulp.dest(dist.images.location));
+});
+
+gulp.task('resizeLogo', function () {
+	gulp.src(source.images.location + 'logo*')
+		.pipe(imageResize({
+			height : 480,
+			upscale : false
+		}))
+		.pipe(gulp.dest(dist.images.location));
 });
 
 gulp.task('tinyPhotosSource', function () {

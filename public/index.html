@@ -1,38 +1,23 @@
 <!DOCTYPE html>
-<html lang="" class="lato">
+<html lang="">
 <meta charset="UTF-8">
-<title>Barbearia Ferreira</title>
+<title>Barbearia Ferreira | Barba, cabelo e Bigode!</title>
+<meta name="theme-color" content="#000000"/>
 <meta name="viewport"
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
 <script>
-	(function (d) {
+	(function(d) {
 		var config = {
-					kitId: 'zcf1tth',
-					scriptTimeout: 6000,
+					kitId: 'hyi0dvn',
+					scriptTimeout: 3000,
 					async: true
 				},
-				h = d.documentElement, t = setTimeout(function () {
-					h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
-				}, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a;
-		h.className += " wf-loading";
-		tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
-		tk.async = true;
-		tk.onload = tk.onreadystatechange = function () {
-			a = this.readyState;
-			if (f || a && a != "complete" && a != "loaded")return;
-			f = true;
-			clearTimeout(t);
-			try {
-				Typekit.load(config)
-			} catch (e) {
-			}
-		};
-		s.parentNode.insertBefore(tk, s)
+				h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
 	})(document);
 </script>
 <script src="dist/js/villa.min.js"></script>
 <link rel="stylesheet" href="dist/css/villa.min.css"/>
-<link rel="stylesheet" href="dist/css/ferreira.css"/>
+<link rel="stylesheet" href="dist/css/ferreira.min.css"/>
 <!--[if lt IE 9]>
 <link rel="stylesheet" type="text/css" href="dist/css/material-colors.css"/>
 <link rel="stylesheet" type="text/css" href="dist/css/villa-cross.min.css"/>
@@ -44,8 +29,9 @@
 <style>
 
 	body {
+		background-color: #000000;
 		min-height: 100vh;
-		padding: 1em;
+		padding: 1em 0;
 	}
 
 	img {
@@ -60,13 +46,64 @@
 		max-width: 16rem;
 	}
 
+	*::selection {
+		background: #ffffff;
+		color: #000000;
+	}
+
+	*::-moz-selection {
+		background: #ffffff;
+		color: #000000;
+	}
+
 	@media (min-width: 48em) {
 
 		body {
-			padding: 6em 1em 1em;
+			padding: 8em 1em 2.25em;
+		}
+
+		img {
+			max-width: 21em;
+			margin-bottom: 1.5em;
+		}
+
+		p {
+			line-height: 1.6;
+			font-size: 1em;
+			text-align: center;
+			max-width: 18rem;
 		}
 
 	}
+
+	@media (min-width: 60em) and (max-height: 48em) {
+
+		body {
+			padding: 4.5em 1em 2.25em;
+		}
+
+	}
+
+	@media (min-width: 72em) {
+
+		body {
+			padding: 4.5em 1em 2.25em;
+		}
+
+	}
+
+	@media (min-width: 96em) {
+
+		body {
+			padding: 10em 1em 2.25em;
+		}
+
+		img {
+			max-width: 24em;
+		}
+
+	}
+
 </style>
 
 <style>
@@ -75,12 +112,20 @@
 		margin-bottom: 1em;
 	}
 
+	@media (min-width: 48em) {
+
+		.Contact {
+			margin-bottom: 1.5em;
+		}
+
+	}
+
 </style>
 
 <style>
 
 	.Slogan {
-		padding: 1em 0;
+		margin-bottom: 1em;
 		text-align: center;
 	}
 
@@ -89,7 +134,21 @@
 		font-size: .75em;
 		line-height: 1.48;
 		text-transform: uppercase;
-		letter-spacing: 2pt;
+		letter-spacing: 1.5pt;
+	}
+
+	@media (min-width: 48em) {
+
+		.Slogan {
+			margin-bottom: 1.5em;
+		}
+
+		.Slogan-title {
+			font-size: .875em;
+			letter-spacing: 2.25pt;
+			line-height: 1.6;
+		}
+
 	}
 
 </style>
@@ -137,6 +196,23 @@
 
 	.ServicesItem-title {
 		font-size: .75em;
+		letter-spacing: .5pt;
+	}
+
+	@media (min-width: 48em) {
+
+		.Services {
+			margin-bottom: 1.5em;
+		}
+
+		.Services-list {
+			max-width: 16em;
+		}
+
+		.ServicesItem-title {
+			font-size: .875em;
+		}
+
 	}
 
 </style>
@@ -149,7 +225,7 @@
 	}
 
 	.Gallery-list {
-		margin: 0 auto;
+		/*background-color: #ffffff;*/
 		display: -webkit-box;
 		display: -moz-box;
 		display: -ms-flexbox;
@@ -157,20 +233,24 @@
 		display: flex;
 		-webkit-align-items: center;
 		align-items: center;
-		-webkit-justify-content: center;
-		justify-content: center;
+		-webkit-justify-content: flex-start;
+		justify-content: flex-start;
 		-webkit-flex-flow: row wrap;
 		flex-flow: row wrap;
-		max-width: 18em;
+		margin: 0 auto;
+		/*padding: 1em 0;*/
+		width: 100%;
 	}
 
 	.GalleryItem {
-		width: 6em;
-		height: 6em;
-		padding: 2px;
+		/*background-color: #ffffff;*/
+		width: 33.333333333vw;
+		height: 33.333333333vw;
+		padding: 6px;
 	}
 
 	.GalleryItem span {
+		background: center no-repeat;
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
 		-o-background-size: cover;
@@ -180,28 +260,63 @@
 		display: block;
 	}
 
+	@media (min-width: 48em) {
+
+		.Gallery {
+			margin-bottom: 1.5em;
+		}
+
+		.Gallery-list {
+			max-width: 36em;
+		}
+
+		.GalleryItem {
+			width: 12em;
+			height: 12em;
+			padding: 8px;
+		}
+
+	}
+
+	@media (min-width: 72em) {
+
+		.Gallery {
+			margin-bottom: 2.25em;
+		}
+
+		.Gallery-list {
+			max-width: 42em;
+		}
+
+		.GalleryItem {
+			width: 14em;
+			height: 14em;
+			padding: 8px;
+		}
+
+	}
+
 </style>
 
+<body class="flex flex-column justify-center align-center tk-lato">
 
-<body class="flex flex-column justify-center align-center black">
-
-<div class="Services font-white">
+<div class="Services font-grey-300">
 
 	<ul class="Services-list">
 
 		<li class="ServicesItem">
 			<div class="ServicesItem-icon"></div>
-			<div class="ServicesItem-title">Barba</div>
+			<div class="ServicesItem-title"><strong>Barba</strong></div>
 		</li>
 
 		<li class="ServicesItem">
 			<div class="ServicesItem-icon"></div>
-			<div class="ServicesItem-title">Cabelo</div>
+			<div class="ServicesItem-title"><strong>Cabelo</strong></div>
 		</li>
 
 		<li class="ServicesItem">
 			<div class="ServicesItem-icon"></div>
-			<div class="ServicesItem-title">Bigode</div>
+			<div class="ServicesItem-title"><strong>Bigode</strong></div>
 		</li>
 
 		<li class="ServicesItem">
@@ -231,15 +346,15 @@
 
 <div class="Gallery">
 	<ul class="Gallery-list">
-		<li class="GalleryItem"><span style="background-image: url('dist/img/1.jpg')"></span></li>
-		<li class="GalleryItem"><span style="background-image: url('dist/img/2.jpg')"></span></li>
-		<li class="GalleryItem"><span style="background-image: url('dist/img/3.jpg')"></span></li>
-		<li class="GalleryItem"><span style="background-image: url('dist/img/4.jpg')"></span></li>
-		<li class="GalleryItem"><span style="background-image: url('dist/img/5.jpg')"></span></li>
-		<li class="GalleryItem"><span style="background-image: url('dist/img/6.jpg')"></span></li>
-		<li class="GalleryItem"><span style="background-image: url('dist/img/7.jpg')"></span></li>
-		<li class="GalleryItem"><span style="background-image: url('dist/img/8.jpg')"></span></li>
-		<li class="GalleryItem"><span style="background-image: url('dist/img/9.jpg')"></span></li>
+		<li class="GalleryItem"><span style="background-image: url('dist/img/thumb-1.jpg')"></span></li>
+		<li class="GalleryItem"><span style="background-image: url('dist/img/thumb-2.jpg')"></span></li>
+		<li class="GalleryItem"><span style="background-image: url('dist/img/thumb-3.jpg')"></span></li>
+		<li class="GalleryItem"><span style="background-image: url('dist/img/thumb-4.jpg')"></span></li>
+		<li class="GalleryItem"><span style="background-image: url('dist/img/thumb-5.jpg')"></span></li>
+		<li class="GalleryItem"><span style="background-image: url('dist/img/thumb-6.jpg')"></span></li>
+		<li class="GalleryItem"><span style="background-image: url('dist/img/thumb-7.jpg')"></span></li>
+		<li class="GalleryItem"><span style="background-image: url('dist/img/thumb-8.jpg')"></span></li>
+		<li class="GalleryItem"><span style="background-image: url('dist/img/thumb-9.jpg')"></span></li>
 	</ul>
 </div>
 
@@ -265,7 +380,7 @@
 
 </ul>
 
-<script src="dist/js/ferreira.js"></script>
+<!--<script src="dist/js/ferreira.min.js"></script>-->
 </body>
 
 </html>
